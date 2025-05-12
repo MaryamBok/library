@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - World's Books Management System</title>
+  <link rel="stylesheet" href="staly.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>World's Books Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Books.html">Books</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="LogIn.html">Login</a></li>
+          <li><a href="SignIn.html">Sign Up</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cart-container">
+        <h2>Create New Account</h2>
+        <form id="signup-form">
+          <input type="text" name="username" placeholder="Username" required style="margin-bottom: 10px; width: 100%; padding: 10px;"/>
+          <input type="email" name="email" placeholder="Email" required style="margin-bottom: 10px; width: 100%; padding: 10px;"/>
+          <input type="password" name="password" placeholder="Password" required style="margin-bottom: 10px; width: 100%; padding: 10px;"/>
+          <button type="submit" id="confirm-btn">Sign Up</button>
+          <p id="signup-feedback" style="margin-top: 10px; color: #b33;"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 World's Books Management System</p>
+      <p>Developed by Maryam, Zainab, Zainab, Rahmmah</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = this.username.value;
+      const password = this.password.value;
+
+      if (username && password.length >= 4) {
+        document.getElementById('signup-feedback').innerText = "Account created successfully!";
+      } else {
+        document.getElementById('signup-feedback').innerText = "Please fill all fields correctly.";
+      }
+    });
+  </script>
+</body>
+</html>
